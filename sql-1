@@ -1,0 +1,234 @@
+SQL
+
+
+--creating a table 
+Create Table person (
+  Id Integer Primary Key,
+  Name varchar(500),
+  Age integer,
+  Height integer,
+  City varchar(1500),
+  FavoriteColor varchar(500),
+ );
+ 
+ -- inserting
+ Insert Into person(Name, Age, Height, City, FavoriteColor) values (
+   "Kaustubh"
+   22,
+   200,
+   "Coppell",
+   "Blue"
+   );
+
+Insert Into person(Name, Age, Height, City, FavoriteColor) values (
+   "Test2"
+   42,
+   242,
+   "City2",
+   "red"
+   );
+
+Insert Into person(Name, Age, Height, City, FavoriteColor) values (
+   "test3"
+   24,
+   192,
+   "city3",
+   "yellow"
+   );
+
+Insert Into person(Name, Age, Height, City, FavoriteColor) values (
+   "test4"
+   45,
+   234,
+   "city4",
+   "green"
+   );
+   
+Insert Into person(Name, Age, Height, City, FavoriteColor) values (
+   "test5"
+   35,
+   124,
+   "city5",
+   "yellow"
+   );
+ 
+--Select all people by height from tallest to shortest
+Select * From person Order By Height Desc;
+
+--same as ^ but shortest to tallest 
+Select * From person Order by Height Asc;
+
+--Select people by age from oldest to youngest 
+Select * From person Order by Age Asc;
+
+--Select people above 20
+Select * From person Where age > 20;
+
+--Select people who are 18
+Select * From person Where age = 18;
+
+--Select people that are less than 20 older than 18
+Select * From person Where age <20 or age;
+
+--Select people that are not 27
+Select * From person Where Age != 27;
+
+--Select people that dont like red
+Select * From person Where FavoriteColor !="red";
+
+--Select people that dont like blue or red
+Select * From person Where FavoriteColor !="red" and !="blue";
+
+--Select people that like green or orange
+Select * From person Where FavoriteColor = "Orange" OR FavoriteColor = "Green";
+
+--Select people that like green, orange and blue *MULTIPLE COLORS
+Select * From person Where FavoriteColor In ("orange","green","blue");
+
+Select * From person where FavoriteColor in ("yellow","purple");
+
+// create table 
+CREATE TABLE Orders ( 
+  PersonID integer, 
+  ProductName string, 
+  ProductPrice float, 
+  Quantity integer 
+);
+
+INSERT INTO Orders ( PersonID, 
+                    ProductName, 
+                    ProductPrice, 
+                    Quantity ) VALUES ( 0, "test", 12.50, 2 );
+                    
+SELECT * FROM Orders;
+
+SELECT SUM(Quantity) FROM Orders;
+
+SELECT SUM(ProductPrice * Quantity) FROM Orders;
+
+SELECT SUM(ProductPrice * Quantity) FROM Orders WHERE PersonID = 0;
+
+
+
+
+
+
+
+INSERT INTO Artist ( Name ) VALUES ( 'artist name' );
+
+SELECT * FROM Artist ORDER BY Name Desc LIMIT 10;
+
+SELECT * FROM Artist ORDER BY Name ASC LIMIT 5;
+
+SELECT * FROM Artist WHERE Name LIKE 'test%';
+
+SELECT * FROM Artist WHERE Name LIKE '%test%';
+
+
+
+
+SELECT FirstName, LastName FROM Employee WHERE City = "test";
+
+SELECT FirstName, LastName, Max(BirthDate) FROM Employee;
+
+SELECT FirstName, LastName, Min(BirthDate) FROM Employee;
+
+SELECT * FROM Employee WHERE ReportsTo = 2;
+
+SELECT COUNT(*) FROM Employee WHERE City = "test";
+
+
+SELECT Count(*) FROM Invoice WHERE BillingCountry = 'USA';
+SELECT Max(total) FROM Invoice;
+SELECT Min(total) FROM Invoice;
+SELECT * FROM Invoice WHERE Total > 5;
+SELECT COUNT(*) FROM Invoice WHERE Total < 5;
+SELECT Count(*) FROM Invoice WHERE BillingState in ('CA', 'TX', 'AZ');
+SELECT AVG(Total) FROM Invoice;
+SELECT SUM(Total) FROM Invoice;
+
+
+
+
+/* create table animal (
+    id int auto increment primary key,
+--  id serial primary key
+  type varchar(1500), 
+  name varchar(200) not null
+); */
+
+
+/* select * from customer; */
+
+/* select distinct country from customer; */
+
+/* select * from customer where company is null; */
+
+/* select * from customer where city like '%to%n'; */
+
+/* select * from track where unitprice = 0.99 limit 25; */
+
+/* select * from track limit 25 offset 3500; */
+
+/* select * from track order by Milliseconds desc; */
+
+/* select * from track 
+where albumid != 227
+and albumid != 226; */
+
+
+/* select * from customer
+where country in ('Brazil', 'Germany','France'); */
+
+
+/* select * from customer */
+/* where supportrepid between 3 and 4;
+ */
+ 
+/*  select count(distinct country) from customer; */
+ 
+/*  select round(sum(Total),2) from invoice; */
+/* select total from invoice; */
+
+/* insert into animal (
+    name,
+      type
+)
+values (
+     'Rufus',
+      'Doge'
+);  */
+/* select * from animal; */
+/* drop table animal; */
+/* create table animal (
+  id integer primary key  autoincrement,
+  name varchar(56),
+  type varchar(56)
+); */
+/* insert into animal (name, type)
+values
+('Penelope', 'Cat'),
+('Maximillion', 'Parakeet'); */
+
+/* select * from animal  */
+
+/* update animal
+set name = 'Max'
+where id = 1; */
+
+/* delete from animal
+where id = 1; */
+/* 
+insert into animal (id, name, type)
+values (1, 'Chewey', 'Dog');
+ */
+
+/* drop table animal; */
+
+
+
+
+
+
+
+
